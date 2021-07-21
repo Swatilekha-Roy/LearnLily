@@ -67,6 +67,71 @@ h3,h4,h5,h6 {
 }
 
 
+/* Section */
+.welcome-text{
+    margin-left: 320px;
+    margin-top: 200px;
+    align-items: center;
+}
+
+.welcome-text h1{
+    padding-bottom: 30px;
+    font-size: 80px;
+}
+
+.welcome-text h4{
+    margin-left: 160px;
+}
+
+.welcome-page-image{
+    margin-left: 820px;
+    position: relative;
+    bottom: 130px;
+}
+
+.website-options {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.website-options-list {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.options-item {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+.options-link {
+    color: #E17192 !important;
+    font-family: 'Passion One', cursive;
+    margin: auto 1rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.options-link:hover,.options-link:focus,.options-link:active {
+    color: #BB1646 !important;
+}
+
+.options-link-active {
+    color: #BB1646 !important;
+}
+
+@media only screen and (max-width: 800px) {
+    .options-item {
+        margin-top: 1%;
+    }
+}
+
 
 /* Footer */
 footer {
