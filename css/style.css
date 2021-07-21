@@ -156,6 +156,45 @@ h3,h4,h5,h6 {
     cursor: pointer;
 }
 
+#grade-text {
+    font-size: 100px;
+    margin-left: 485px;
+    margin-top: 150px;
+}
+
+#grades-table {
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+table {
+    font-family: 'Mallanna', sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+  }
+  
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 30px;
+  }
+
+th {
+    font-size: 22px;
+    color: #840C1A;
+}
+  
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+#grades-page-image {
+    width: 30%;
+    margin-left: 888px;
+    margin-top: 300px;
+    position: relative;
+    bottom: 700px;
+}
 
 /* Footer */
 footer {
