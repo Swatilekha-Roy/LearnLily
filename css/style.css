@@ -196,6 +196,16 @@ tr:nth-child(even) {
     bottom: 700px;
 }
 
+#essay-text {
+    margin-left: 50px;
+}
+
+#essay-page-image {
+    margin-left: 50px;
+    position: relative;
+    top: 200px;
+}
+
 /* Footer */
 footer {
 	margin-top: 70px;
