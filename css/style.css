@@ -301,3 +301,9 @@ footer {
         margin-top: 30%;
     }
 }
+
+
+/* Remove horizontal scroll */
+html {
+	overflow-x: hidden;
+}
