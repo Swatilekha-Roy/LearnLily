@@ -16,6 +16,7 @@ body {
 
 h1,h2 {
     font-family: 'Mallanna', sans-serif;
+    text-align: center;
     color: #E17192;
 }
 
@@ -68,7 +69,7 @@ h3,h4,h5,h6 {
 
 
 /* Section */
-.welcome-text{
+/*.welcome-text{
     margin-left: 320px;
     margin-top: 200px;
     align-items: center;
@@ -130,7 +131,43 @@ h3,h4,h5,h6 {
     .options-item {
         margin-top: 1%;
     }
+}*/
+
+/* Homepage and landpage */
+.welcome-text {
+    font-family: 'Passion One', cursive;
+    font-size: 1.3rem;
+    color: #840C1A;
+    font-weight: 200 !important;
+    float: right;
 }
+
+.welcome-img {
+    width: 300px;
+}
+
+.opt-nonlink {
+    color: #AD385B !important;
+    font-family: 'Passero One', cursive;
+    font-size: 1.3rem;
+    text-decoration: none !important;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px)
+{
+    .welcome-text {
+        float: none !important;
+        margin-left: 20px;
+    }
+
+    .welcome-img {
+        width: 210px;
+    }
+}
+
+
 
 #checklist-text {
     margin-top: 200px;
@@ -205,6 +242,8 @@ tr:nth-child(even) {
     position: relative;
     top: 200px;
 }
+
+
 
 /* Footer */
 footer {
@@ -291,11 +330,11 @@ footer {
 @media screen and (max-width: 1200px)
 {
     .top-con {
-        margin-top: 20%;
+        margin-top: 15%;
     }
 }
 
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 600px)
 {
     .top-con {
         margin-top: 30%;

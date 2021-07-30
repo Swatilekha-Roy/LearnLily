@@ -56,17 +56,32 @@
             </div>
         </nav>
 
-        <form action='/~/LearnLily/signup' method='POST' enctype='multipart/form-data' style="margin-top: 10%;">
-	
-            <input type='email' name='username' placeholder='Email' required>
-            <input type='password' name='password' placeholder='Password' required>
-            
-            <!-- You can add extra fields like phone number -->
-            <input type='text' name='phone' placeholder='Phone' required>
-            <input type='submit' value='Sign up'>
-            <input type='hidden' name='redirecturl' value='/~/LearnLily/index'>
+        <!-- Heading -->
+        <div class="container top-con">
+            <div class="row">
+                <h1>
+                    Join Us!
+                </h1>
+            </div>
+        </div>
 
+        <!-- Sign Up Form -->
+        <form action='/~/LearnLily/signup' method='POST' enctype='multipart/form-data' style="margin-top: 3%;">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" name="username" id="exampleFormControlInput1" placeholder="littleprodigy@gmail.com" required>
+                
+                <label for="exampleFormControlInput2">Name</label>
+                <input type="password" class="form-control" name="name" id="exampleFormControlInput3"  placeholder="Lily Rose" required>
+
+                <label for="exampleFormControlInput3">Password</label>
+                <input type="name" class="form-control" name="password" id="exampleFormControlInput3" placeholder="ilovelearnlily123" required>
+
+                <button type="submit" class="btn btn-primary" value="Sign up">Submit</button>
+                <input type="hidden" name="redirecturl" value="/~/LearnLily/index">
+            </div>
         </form>
+
 
         <!-- Footer -->
         <footer>

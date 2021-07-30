@@ -65,35 +65,44 @@
             </div>
         </nav>
 
-        <!-- Section -->
-        <section>
-            <div class="welcome-text">
-                <h1>Welcome to LearnLily, {{username}}!</h1>
-                <h4>Your all-in-one education portal...</h4>
+        <!-- Heading -->
+        <div class="container top-con wow fadeInLeft">
+            <div class="row">
+                <h1 style="font-size: 4.8em;">Welcome to LearnLily, {{username}}!</h1>
             </div>
-            <div class="welcome-page-image">
-                <img src="img/welcome.png" alt="Welcome Book">
+        </div>
+
+        <!-- Homepage section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="welcome-text">
+                        Your all-in-one education portal...
+                    </span>
+                </div>
+                <div class="col-md-3 col-offset-2 wow fadeInRight">
+                    <img class="welcome-img" src="img/welcome.png" />
+                </div>
             </div>
-            <div class="website-options">
-                <ul class="website-options-list">
-                    <li class="options-item">
-                        <a class="options-link" aria-current="page" href="">Check-List</a>
-                    </li>
+        </div>
 
-                    <li class="options-item">
-                        <a class="options-link" aria-current="page" href="">Grades</a>
-                    </li>
-
-                    <li class="options-item">
-                        <a class="options-link" aria-current="page" href="">Essay Check</a>
-                    </li>
-
-                    <li class="options-item">
-                        <a class="options-link" aria-current="page" href="">Speech Practice</a>
-                    </li>
-                </ul>
+        <!-- Option non-links -->
+        <div class="container">
+            <div class="row" style="margin-left: 150px;">
+                <div class="col-xs-6 col-md-3">
+                    <a href="checklist.html" style="text-decoration: none;"><span class="opt-nonlink">CHECK-LIST</span></a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="grades.html" style="text-decoration: none;"><span class="opt-nonlink">GRADES</span></a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="essay.html" style="text-decoration: none;"><span class="opt-nonlink">ESSAY CHECK</span></a>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <a href="speech.html" style="text-decoration: none;"><span class="opt-nonlink">SPEECH PRACTICE</span></a>
+                </div>
             </div>
-        </section>
+        </div>
 
         <!-- Footer -->
         <footer>
