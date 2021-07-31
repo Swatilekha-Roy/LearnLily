@@ -68,71 +68,6 @@ h3,h4,h5,h6 {
 }
 
 
-/* Section */
-/*.welcome-text{
-    margin-left: 320px;
-    margin-top: 200px;
-    align-items: center;
-}
-
-.welcome-text h1{
-    padding-bottom: 30px;
-    font-size: 80px;
-}
-
-.welcome-text h4{
-    margin-left: 160px;
-}
-
-.welcome-page-image{
-    margin-left: 820px;
-    position: relative;
-    bottom: 130px;
-}
-
-.website-options {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.website-options-list {
-    margin-left: auto;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: center;
-}
-
-.options-item {
-    text-decoration: none;
-    list-style-type: none;
-}
-
-.options-link {
-    color: #E17192 !important;
-    font-family: 'Passion One', cursive;
-    margin: auto 1rem;
-    font-size: 1.4rem;
-    font-weight: 400;
-    text-decoration: none;
-}
-
-.options-link:hover,.options-link:focus,.options-link:active {
-    color: #BB1646 !important;
-}
-
-.options-link-active {
-    color: #BB1646 !important;
-}
-
-@media only screen and (max-width: 800px) {
-    .options-item {
-        margin-top: 1%;
-    }
-}*/
-
 /* Homepage and landpage */
 .welcome-text {
     font-family: 'Passion One', cursive;
@@ -165,6 +100,64 @@ h3,h4,h5,h6 {
     .welcome-img {
         width: 210px;
     }
+}
+
+
+
+/* Sign up and log in forms */
+.signupform {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.form-control {
+    background-color: #ffcc0067 !important;
+}
+
+.form-control:active,.form-control:focus {
+    border: 1px solid #f8e005;   
+}
+
+label {
+    font-family: 'Passero One', cursive;
+    color: #BB1646;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+textarea:focus, 
+textarea.form-control:focus, 
+input.form-control:focus, 
+input[type=text]:focus, 
+input[type=password]:focus, 
+input[type=email]:focus, 
+input[type=number]:focus, 
+[type=text].form-control:focus, 
+[type=password].form-control:focus, 
+[type=email].form-control:focus, 
+[type=tel].form-control:focus, 
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+  outline: none !important;
+}
+
+.signupbtn {
+    float: right;
+    background-color: #AD385B;
+    color: white;
+    outline: none !important;
+    border: none !important;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-family: 'Passero One', cursive;
+    font-weight: 500;
+    padding: 1% 5%;
+}
+
+.signupbtn:hover,.signupbtn:active,.signupbtn:focus {
+    background-color: #922b48;
+    outline: none !important;
+    border: none !important;
 }
 
 
@@ -252,6 +245,13 @@ footer {
     background-color: #ffcc00b6;
 	color: #840C1A;
 	text-align: left;
+}
+
+.footer-sticky {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-right {

@@ -55,20 +55,35 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Heading -->
+        <div class="container top-con">
+            <div class="row">
+                <h1>
+                    Welcome Back!
+                </h1>
+            </div>
+        </div>
         
-        <form action='/~/LearnLily/login' method='POST' enctype='multipart/form-data' style="margin-top: 10%;">
-			<!-- Username and password are mandatory to log in -->
-			<input type='email' name='username' placeholder='Email' required>
-			<input type='password' name='password' placeholder='Password' required>
-		
-			<input type='submit' value='Log In'>
-		
-			<!-- Set a redirect page that a user goes to after signing up, change PAGENAME2REDIRECT to what you want -->
-			<input type='hidden' name='redirecturl' value='/~/LearnLily/index'>
-		</form>
+        <!-- Log in form -->
+        <form class="signupform" action='/~/LearnLily/login' method='POST' enctype='multipart/form-data' style="margin-top: 3%;">
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" name="username" id="exampleFormControlInput1" placeholder="littleprodigy@gmail.com" required>
+                <br>
+
+                <label for="exampleFormControlInput3">Password</label>
+                <input type="password" class="form-control" name="password" id="exampleFormControlInput3" placeholder="ilovelearnlily123" required>
+                <br>
+
+                <button type="submit" class="btn btn-primary signupbtn" value="Log In">Submit</button>
+                <input type="hidden" name="redirecturl" value="/~/LearnLily/index">
+            </div>
+        </form>
+
 
         <!-- Footer -->
-        <footer>
+        <footer class="footer-sticky">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-10 footer-left">
@@ -82,7 +97,7 @@
                     <div class="col-sm-2 footer-right">
                         <a class="footer-link" href="https://github.com/Swatilekha-Roy/LearnLily"><i class="fa fa-github" aria-hidden="true" style="font-size: 30px;"></i> </a>
 
-                        <a class="footer-link" href="https://swatilekharoy.qoom.space/~/LearnLily"><img src="img/qoom.png" style="width: 25px;"></a>
+                        <!-- <a class="footer-link" href="https://swatilekharoy.qoom.space/~/LearnLily"><img src="img/qoom.png" style="width: 25px;"></a> -->
                     </div>
                 </div>
             </div>

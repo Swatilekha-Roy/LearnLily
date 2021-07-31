@@ -66,18 +66,21 @@
         </div>
 
         <!-- Sign Up Form -->
-        <form action='/~/LearnLily/signup' method='POST' enctype='multipart/form-data' style="margin-top: 3%;">
+        <form class="signupform" action='/~/LearnLily/signup' method='POST' enctype='multipart/form-data' style="margin-top: 3%;">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Email address</label>
                 <input type="email" class="form-control" name="username" id="exampleFormControlInput1" placeholder="littleprodigy@gmail.com" required>
-                
+                <br>
+
                 <label for="exampleFormControlInput2">Name</label>
-                <input type="password" class="form-control" name="name" id="exampleFormControlInput3"  placeholder="Lily Rose" required>
+                <input type="name" class="form-control" name="name" id="exampleFormControlInput2"  placeholder="Lily Rose" required>
+                <br>
 
                 <label for="exampleFormControlInput3">Password</label>
-                <input type="name" class="form-control" name="password" id="exampleFormControlInput3" placeholder="ilovelearnlily123" required>
+                <input type="password" class="form-control" name="password" id="exampleFormControlInput3" placeholder="ilovelearnlily123" required>
+                <br>
 
-                <button type="submit" class="btn btn-primary" value="Sign up">Submit</button>
+                <button type="submit" class="btn btn-primary signupbtn" value="Sign up">Submit</button>
                 <input type="hidden" name="redirecturl" value="/~/LearnLily/index">
             </div>
         </form>
@@ -98,7 +101,7 @@
                     <div class="col-sm-2 footer-right">
                         <a class="footer-link" href="https://github.com/Swatilekha-Roy/LearnLily"><i class="fa fa-github" aria-hidden="true" style="font-size: 30px;"></i> </a>
 
-                        <a class="footer-link" href="https://swatilekharoy.qoom.space/~/LearnLily"><img src="img/qoom.png" style="width: 25px;"></a>
+                        <!-- <a class="footer-link" href="https://swatilekharoy.qoom.space/~/LearnLily"><img src="img/qoom.png" style="width: 25px;"></a> -->
                     </div>
                 </div>
             </div>
