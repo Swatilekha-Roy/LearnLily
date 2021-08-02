@@ -152,6 +152,7 @@ input[type=number]:focus,
     font-family: 'Passero One', cursive;
     font-weight: 500;
     padding: 1% 5%;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.25);
 }
 
 .signupbtn:hover,.signupbtn:active,.signupbtn:focus {
@@ -160,6 +161,29 @@ input[type=number]:focus,
     border: none !important;
 }
 
+
+
+/* Big buttons */
+.bigbtn {
+    background-color: #AD385B;
+    color: white;
+    outline: none !important;
+    border: none !important;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-family: 'Passero One', cursive;
+    font-weight: 500;
+    padding: 2% 6%;
+    box-shadow: 6px 6px 25px 3px rgb(174, 141, 141);
+    -webkit-box-shadow: 6px 6px 25px 3px rgb(174, 141, 141);
+    -moz-box-shadow: 6px 6px 25px 3px rgb(174, 141, 141);
+}
+
+.bigbtn:hover,.bigbtn:active,.bigbtn:focus {
+    background-color: #922b48;
+    outline: none !important;
+    border: none !important;
+}
 
 
 #checklist-text {
