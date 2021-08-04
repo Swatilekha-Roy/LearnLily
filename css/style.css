@@ -183,7 +183,34 @@ input[type=number]:focus,
 .bigbtn:hover,.bigbtn:active,.bigbtn:focus {
     background-color: #922b48;
     outline: none !important;
+    box-shadow: none !important;
     border: none !important;
+}
+
+
+
+/* Speech Page */
+canvas {
+    margin-bottom: 5%;
+    float: right;
+}
+
+@media only screen and (max-width: 768px)
+{
+    canvas {
+        float: left;
+    }
+    
+    .speech-img {
+        display: none;
+    }    
+}
+
+@media only screen and (max-width: 575px)
+{
+    #stop-record-btn {
+        margin-top: 3%;
+    }
 }
 
 
