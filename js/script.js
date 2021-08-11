@@ -48,6 +48,16 @@ window.logout = function() {
 
     console.log("loaded models");
 
+    // fetch('audiomodel.js').then(function (response) {
+    //     return response.json();
+    //  }).then(function (obj) {
+    //    console.log(obj);
+    //    console.log(obj.address);
+    //  }).catch(function (error) {
+    //    console.log("Something went wrong retriving JSON file");
+    //    console.log(error);
+    //  })
+
     // for audio model
     async function createModel() {
         const checkpointURL = AUDIO_URL + "model.json"; // model topology
@@ -74,6 +84,7 @@ window.logout = function() {
 
         const modelURLimage = IMAGE_URL + "model.json";
         const metadataURLimage = IMAGE_URL + "metadata.json";
+
         const modelURLpose = POSE_URL + "model.json";
         const metadataURLpose = POSE_URL + "metadata.json";
 
@@ -165,8 +176,9 @@ window.logout = function() {
             // Change Button text
             document.querySelector("#record-btn").innerHTML = "Recording...";
             document.querySelector("#speech-report").style.display = "block";
-            document.querySelector("#record-btn").style.float = "none";
+            //document.querySelector("#record-btn").style.float = "none";
             document.querySelector("#stop-record-btn").style.display = "inline-block";
+            document.querySelector("#canvas").style.display = "block";
 
             console.log("page orientations changed");
     }
@@ -191,16 +203,19 @@ window.logout = function() {
         // Image model texts
         imagelabelContainer.childNodes[0].innerHTML = predictionimage[0].className + ": " + predictionimage[0].probability.toFixed(2)*100 + "%";
         imagelabelContainer.childNodes[0].style.color = "#0dd840";
-        imagelabelContainer.childNodes[0].style.fontWeight = 700;
         imagelabelContainer.childNodes[1].innerHTML = predictionimage[1].className + ": " + predictionimage[1].probability.toFixed(2)*100 + "%";
         imagelabelContainer.childNodes[1].style.color = "#ee0a0a";
-        imagelabelContainer.childNodes[1].style.fontWeight = 700;
 
-
-        for (let i = 0; i < maxPredictionspose; i++) {
-        const classPrediction = predictionpose[i].className + ": " + predictionpose[i].probability.toFixed(2);
-        poselabelContainer.childNodes[i].innerHTML = classPrediction;
-        }
+        // Pose model texts
+        poselabelContainer.childNodes[0].innerHTML = predictionpose[0].className + ": " + predictionpose[0].probability.toFixed(2)*100 + "%";
+        poselabelContainer.childNodes[0].style.color = "#0dd840"; //good eye contact
+        poselabelContainer.childNodes[1].innerHTML = predictionpose[1].className + ": " + predictionpose[1].probability.toFixed(2)*100 + "%";
+        poselabelContainer.childNodes[1].style.color = "#ee0a0a"; //bad eye contact
+        poselabelContainer.childNodes[2].innerHTML = predictionpose[2].className + ": " + predictionpose[2].probability.toFixed(2)*100 + "%";
+        poselabelContainer.childNodes[2].style.color = "#ee0a0a"; //fidgeting
+        poselabelContainer.childNodes[3].innerHTML = predictionpose[3].className + ": " + predictionpose[3].probability.toFixed(3)*100 + "%";
+        poselabelContainer.childNodes[3].style.color = "#ee0a0a"; //slump
+        
 
         // finally draw the poses
         drawPose(pose);
@@ -223,4 +238,78 @@ async function initstop()
     await webcampose.stop();
     //recognizer.stopListening();
     document.querySelector("#record-btn").innerHTML = "Start Recording";
+}
+
+
+
+/* Google Calender API */
+
+
+
+/* Essay Grammar Check */
+// Send text from textbox to browser
+let text,quotes_text;
+
+function sendessay()
+{
+    textessay = document.querySelector("#essay-text").value;
+    //quotes_text = textessay.replace(/["]+/g,'\"');
+
+    // Grammar checker tool
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://dnaber-languagetool.p.rapidapi.com/v2/check",
+        "method": "POST",
+        "headers": {
+            "content-type": "application/x-www-form-urlencoded",
+            "x-rapidapi-key": "7435682d81msh80bb1a3c307cfb3p120bd9jsn6c2c4d095820",
+            "x-rapidapi-host": "dnaber-languagetool.p.rapidapi.com"
+        },
+        "data": {
+            "text": textessay,
+            //"markup": "\"\"",
+            "language": "en-US"
+        },
+        
+    };
+    settings.text = quotes_text;
+
+    $.ajax(settings).done(function (response) {
+        console.log(response.matches);
+
+        // calls function to print result
+        printreport(response.matches);
+    });   
+}
+
+// prints grammar report to page
+var grmessage,grsentence,grissuetype,grshortmessage,grli;
+function printreport(matches)
+{
+    for(i=0; i<matches.length; i++)
+    {
+        //console.log(matches[i].context);
+        //grtext = matches[i].context.text;       
+        grsentence = document.createTextNode("In this sentence \"" + matches[i].sentence + "\" there is possible error related to ");
+        grmessage = document.createTextNode(matches[i].message+"\n\n");
+        grissuetype = document.createTextNode("\"" + matches[i].rule.issueType + "\" \n");
+        //grissuetype.style.color = "red";
+
+        grli = document.createElement("li");
+        grli.setAttribute("style", "color: green;");
+        //grli.setAttribute("id", "idgrli");
+        //document.querySelector("#idgrli").style.color = "red";
+
+        grli.appendChild(grsentence);
+        grli.appendChild(grissuetype);
+        if(matches[i].shortMessage !== undefined)
+        {
+            grshortmessage = document.createTextNode(matches[i].shortMessage);
+            grli.appendChild(grshortmessage);
+        }
+        grli.appendChild(grmessage);
+        document.querySelector(".gr-report").appendChild(grli);
+        //document.querySelector(".gr-report").textContent += matches[i].context.text;
+    }
 }

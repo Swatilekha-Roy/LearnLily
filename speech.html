@@ -76,18 +76,18 @@
             <br>
 
             <div class="row">
-                <div class="col-xs-8 col-sm-6 col-md-7">
+                <div class="col-xs-8 col-sm-6 col-md-6">
                     <button id="record-btn" class="btn btn-primary bigbtn wow fadeIn" type="button" onclick="init()" style="float: right;">Start Recording</button>
                 </div>
                 
-                <div class="col-xs-8 col-sm-6 col-md-5">
+                <div class="col-xs-8 col-sm-6 col-md-6">
                     <button id="stop-record-btn" class="btn btn-primary bigbtn" type="button" onclick="initstop()" style="display: none;">Stop Recording</button>
                 </div>
             </div>
 
             <div class="row" style="margin-top: 5%;">
                 <div class="col-xs-12 col-md-7">
-                    <canvas id="canvas" style="margin-right: 0; padding-right: 0;">
+                    <canvas id="canvas" style="margin-right: 0; padding-right: 0; display: none;">
                     </canvas>
                 </div>
 
@@ -97,18 +97,18 @@
             </div>
 
             <div class="row">
-                <h3 id="speech-report" style="display: none;">
+                <h3 id="speech-report" style="display: none; font-size: 2rem;">
                     Speech Analysis Live Report
                 </h3>
                 <div class="col-xs-12 col-md-4">
-                    <div id="pose_label-container"></div>
+                    <div id="pose_label-container" style="font-size: 1.1rem; font-weight: 700;"></div>
                 </div>
 
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-4" style="font-size: 1.1rem; font-weight: 700;">
                     <div id="audio_label-container"></div>
                 </div>
 
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-4" style="font-size: 1.1rem; font-weight: 700;">
                     <div id="image_label-container"></div>
                 </div>
             </div>                
@@ -152,16 +152,23 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
         
         <!-- Teachable Machine ML libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script src="js/tensorflow/tf.min.js"></script>
+        <script src="js/tensorflow/teachablemachine-pose.min.js"></script>
+        <script src="js/tensorflow/speech-commands.min.js"></script>
+        <script src="js/tensorflow/teachablemachine-image.min.js"></script>
+        
+        <script src="js/tensorflow/audiomodel.json" type="application/json"></script>
+        <script src="js/tensorflow/audiometadata.json" type="application/json"></script>
+        <script src="js/tensorflow/imagemodel.json" type="application/json"></script>
+        <script src="js/tensorflow/imagemetadata.json" type="application/json"></script>
+        <script src="js/tensorflow/posemodel.json" type="application/json"></script>
+        <script src="js/tensorflow/posemetadata.json" type="application/json"></script>
 
-        <!-- Custom scripts -->    
-        <script type="text/javascript" src="js/script.js"></script>
+        <!-- Custom script -->    
+        <script src="js/script.js"></script>
 
         <!-- WOW animations -->
-        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script src="js/wow/wow.min.js"></script>
 
         <script type="text/javascript">
             new WOW().init();

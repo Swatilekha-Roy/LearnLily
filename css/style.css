@@ -20,6 +20,10 @@ h1,h2 {
     color: #E17192;
 }
 
+h2 {
+    font-size: 2.5rem;
+}
+
 h3,h4,h5,h6 {
     color: #840C1A;
     font-family: 'Passero One', cursive;
@@ -195,6 +199,16 @@ canvas {
     float: right;
 }
 
+#canvas {
+    border-radius: 15px;
+    border-color: #E17192;
+    border-width: 5px;
+    border-style: ridge;
+    box-shadow: 6px 6px 25px 3px rgb(133, 95, 95);
+    -webkit-box-shadow: 6px 6px 25px 3px rgb(133, 95, 95);
+    -moz-box-shadow: 6px 6px 25px 3px rgb(133, 95, 95);
+}
+
 @media only screen and (max-width: 768px)
 {
     canvas {
@@ -278,7 +292,7 @@ tr:nth-child(even) {
     position: relative;
     bottom: 700px;
 }
-
+/*
 #essay-text {
     margin-left: 50px;
 }
@@ -288,7 +302,14 @@ tr:nth-child(even) {
     position: relative;
     top: 200px;
 }
+*/
 
+
+
+/* Essay Page */
+textarea {
+    resize: none;
+}
 
 
 /* Footer */

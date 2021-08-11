@@ -66,20 +66,37 @@
         </nav>
 
 
-        <!-- Section -->
+        <!-- Essay Input Section -->
         <div class="container top-con wow fadeInLeft">
             <div class="row">
-                <section>
-                    <div id="essay-text" class="col-md-7">
-                        <h2>LearnLily word counter & text analysis guide</h2>
-                    </div>
-                    <div id="essay-page-image" class="col-md-3 col-offset-2 wow fadeInRight">
-                        <img src="img/essay.png" alt="Open Book">
-                    </div>
-                </section>
+                <h2>LearnLily word counter & text analysis guide</h2>
+            </div>
+            
+            <div class="row" style="margin-top: 5%;">
+                <div class="col-xs-12 col-md-3 col-lg-4 col-offset-2">
+                    <img src="img/essay.png" width="300"/>
+                </div>
+               
+                <div class="col-xs-12 col-md-9 col-lg-6 form-group wow fadeIn" style="float: right;">
+                    <label for="exampleFormControlTextarea1">Enter Your Essay</label>
+                    <textarea class="form-control" id="essay-text" rows="8"></textarea>
+                    <button class="btn btn-primary bigbtn" style="float: right; margin-top: 3%;" onclick="sendessay()">Submit Text For Review</button>
+                </div>
             </div>
         </div>
 
+        <!-- Grammar analysis output -->
+        <div class="container">
+            <div class="row">
+                <br>
+                <br>
+                <h3>Grammar Report</h3>
+                <p>
+                    <ol class="gr-report">
+                    </ol>
+                </p>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer>
@@ -117,7 +134,7 @@
         <script type="text/javascript" src="js/script.js"></script>
 
         <!-- WOW animations -->
-        <script type="text/javascript" src="js/wow.min.js"></script>
+        <script type="text/javascript" src="js/wow/wow.min.js"></script>
 
         <script type="text/javascript">
             new WOW().init();
