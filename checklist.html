@@ -46,15 +46,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="grades.html">Grades</a>
+                            <a class="nav-link" aria-current="page" href="grades">Grades</a>
+                        </li> 
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="doubts">Doubts Space</a>
                         </li> 
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="essay.html">Essay Check</a>
+                            <a class="nav-link" aria-current="page" href="essay">Essay Check</a>
                         </li> 
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="speech.html">Practice Speech</a>
+                            <a class="nav-link" aria-current="page" href="speech">Practice Speech</a>
                         </li> 
 
                         <li class="nav-item">
@@ -66,19 +70,38 @@
         </nav>
 
 
-        <!-- Section -->
-        <section>
-            <div id="checklist-text">
-                <h2>Maintain your learning checklist</h2>
+        <!-- Main Content Section -->
+        <div class="container top-con wow fadeInRight">
+            <div class="row">
+                <h2>Maintain Your Check List Seamlessly!</h2>
             </div>
-            <div id="checklist-page-image">
-                <img src="img/checklist.png" alt="Girl setting checklist">
+            <div class="row">
+                <div class="col-12">
+                	
+                	<form action="/~/LearnLily/account/checklist" method="POST" enctype="multipart/form-data">
+                    	<textarea type="text" name="log" placeholder="Enter your task to be done" required class="form-control" rows="2" style="margin: auto; align-items: center; justify-content: center; max-width: 600px;"></textarea>
+                    	<input style="display: none;" type="text" class="edit-input" name="status" value="1"  />
+                    	<button type="submit" style="float:right; padding: 2% 3%" value="Submit" class="btn btn-primary bigbtn">Add   Your Activity</button>
+                    </form>
+                </div>
             </div>
-            <div>
-                <a href="#" id="reminder-button">Set Reminders</a>
-            </div>
-        </section>
-
+        </div>
+        
+        
+        <div class="container" style="margin-top: 6%;">
+        	<div class="row">
+        		<div class="col-12v col-md-8">
+        			<ul id="ans-ul">
+        			</ul>
+        		</div>
+        		
+        		<div class="col-12 col-md-4">
+                    <img src="img/checklist.png" width="350px" style="float: right; margin-bottom: 0;" />
+                </div>
+        	</div>
+        </div>
+        
+        
 
         <!-- Footer -->
         <footer>
@@ -114,6 +137,7 @@
         
         <!-- Custom scripts -->    
         <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/checklist.js"></script>
 
         <!-- WOW animations -->
         <script type="text/javascript" src="js/wow/wow.min.js"></script>

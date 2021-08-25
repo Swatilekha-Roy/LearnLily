@@ -23,6 +23,26 @@
 
         <!-- WOW CSS -->
         <link rel="stylesheet" href="css/animate.css">
+        
+        <!-- Plotly JS -->
+        <script src="https://cdn.plot.ly/plotly-2.3.1.min.js"></script>
+
+		<!-- Leaflet -->
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet-src.js"></script>
+		
+		<!-- D3 -->
+		<script src="https://unpkg.com/d3@5.15.0/dist/d3.min.js"></script>
+		
+		<!-- leaflet-gpx -->
+		<script src="https://unpkg.com/leaflet-gpx@1.5.0/gpx.js"></script>
+		
+		<!-- leaflet-elevation -->
+		<link rel="stylesheet" href="https://unpkg.com/@raruto/leaflet-elevation@1.0.1/dist/leaflet-elevation.css" />
+		<script src="https://unpkg.com/@raruto/leaflet-elevation@1.0.1/dist/leaflet-elevation.js"></script>
+
+
+        <!-- JS Pdf -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
             
         <!-- Title of Page -->
         <title>LearnLily</title>
@@ -42,15 +62,19 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="checklist.html">Checklist</a>
+                            <a class="nav-link" href="checklist">Checklist</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="grades.html">Grades</a>
+                            <a class="nav-link" aria-current="page" href="grades">Grades</a>
+                        </li> 
+                        
+                         <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="doubts">Doubts Space</a>
                         </li> 
 
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="essay.html">Essay Check</a>
+                            <a class="nav-link" aria-current="page" href="essay">Essay Check</a>
                         </li> 
 
                         <li class="nav-item">
@@ -66,6 +90,7 @@
         </nav>
 
         
+        <!-- Speech Section -->
         <div class="container top-con">
             <div class="row wow fadeInLeft">
                 <h2>Want to be more confident with your communications?</h2>
@@ -76,12 +101,12 @@
             <br>
 
             <div class="row">
-                <div class="col-xs-8 col-sm-6 col-md-6">
-                    <button id="record-btn" class="btn btn-primary bigbtn wow fadeIn" type="button" onclick="init()" style="float: right;">Start Recording</button>
+                <div class="col-xs-12">
+                    <button id="record-btn" class="btn btn-primary bigbtn wow fadeIn" type="button" onclick="init()" style="display: flex; align-items: center; justify-content: center; margin: auto; padding: 12px 25px;">Start Recording</button>
                 </div>
                 
-                <div class="col-xs-8 col-sm-6 col-md-6">
-                    <button id="stop-record-btn" class="btn btn-primary bigbtn" type="button" onclick="initstop()" style="display: none;">Stop Recording</button>
+                <div class="col-xs-12" style="margin-top: 3%;">
+                    <button id="stop-record-btn" class="btn btn-primary bigbtn" type="button" onclick="initstop()" style="display: none; align-items: center; justify-content: center; margin: auto; padding: 12px 25px;">Stop Recording</button>
                 </div>
             </div>
 
@@ -90,13 +115,17 @@
                     <canvas id="canvas" style="margin-right: 0; padding-right: 0; display: none;">
                     </canvas>
                 </div>
+                
+                <div class="col-xs-12 col-md-7" id="filler-gif" style="float: right;">
+                    <iframe src="https://giphy.com/embed/w82VCczHtPMnjQ2l4H" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                </div>
 
                 <div class="col-xs-12 col-md-4 speech-img wow slideInRight">
                     <img src="img/speech.png" height="350" />
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row" id="speech-report-div">
                 <h3 id="speech-report" style="display: none; font-size: 2rem;">
                     Speech Analysis Live Report
                 </h3>
@@ -113,11 +142,45 @@
                 </div>
             </div>                
 
-            <div class="row">
-
+            <div class="row" id="speech-final-rep" style="margin-top: 4%; display: none;">
+				<p>
+					<strong>Posture Feedback</strong>: <span id="pose-rep"></span>
+					<br>
+					<strong>Voice Feedback</strong>: <span id="audio-rep"></span>
+					<br>
+					<strong>Fly Solo Feedback</strong>: <span id="image-rep"></span>
+				</p>
+				<p> 
+					<strong>Total Speech Duration</strong>: <span id="time-rep"></span>
+				</p>
+				<div id="graph-div" style="max-width:800px; max-height:300px; margin: auto; align-items: center; justify-items: center;"></div>
+				<img id="jpg-export" style="display: none;"/>
+				<button id="speech-report-btn" style="max-width: 350px; margin: auto; align-items: center; justify-items: center;" class="bigbtn">Download Speech Report</button>
             </div>
         </div>
         
+        <!-- Speech Description -->
+        <div class="container wow fadeInRight" id="landspeech" style="margin-top: 5%; background-color: rgba(253, 249, 190, 0.801); padding: 15px; border-radius: 10px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="img/landspeech.png" width="280px" />
+                </div>
+                <div class="col-md-8" style="z-index: 200;">
+                    <h3>How to Use LearnLily's Speech Analyser?</h3>
+                    <ul>
+                    	<li>Click on the big 'Start Recording' button in the center.</li>
+                    	<li>Take a couple of deep breaths and be patient while our ML software loads.</li>
+                    	<li>If this is your first time using our platform, you will have to allow your browser camera and microphone permissions (don't fret, we don't store any of your data).</li>
+                    	<li>Once the model has successfully loaded, you will see the camera canvas in the middle.</li>
+                    	<li>Get comfortable and start speaking. While you do, you will get to see live feedback of your speech.</li>
+                    	<li>Once you're done, press the 'Stop Recording' button.</li>
+                    	<li>You'll see an overview of your overall speech and also the duration that you spoke for.</li>
+                    	<li>If you want to see a graphical representation of your speech and also download a .pdf version of your report, hit the 'Download Speech Report' button!</li>
+                    	<li>Last but not the least, Moira Rose is here to inspire you! :)</li>
+                    </ul>
+                </div>                
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer>
@@ -166,6 +229,7 @@
 
         <!-- Custom script -->    
         <script src="js/script.js"></script>
+        <script src="js/speech.js"></script>
 
         <!-- WOW animations -->
         <script src="js/wow/wow.min.js"></script>
