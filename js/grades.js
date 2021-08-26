@@ -51,7 +51,8 @@ function displaygradeinput(grade_no)
 }
 
 function calcgrade(grade_no)
-{
+{	
+	document.querySelector(".grade-rep").style.display = "block";
     console.log("To");    
     var sctot = 0; var wttot = 0;
 
@@ -69,4 +70,5 @@ function calcgrade(grade_no)
         console.log(wttot);
     }
     //console.log(sctot + " " +wttot);
+    document.querySelector("#grade_span").innerHTML = (sctot/wttot);
 }
